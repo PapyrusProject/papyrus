@@ -3,7 +3,7 @@ import './globals.css'
 import Header from '@/components/Header/Header'
 import { Inter } from 'next/font/google'
 
-const inter = Inter({subsets: ['latin']})
+const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -17,19 +17,19 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-br">
-      <body className={`flex flex-col min-h-screen items-center ${inter.className}`}>
-        <header className='container'>
+      <body className={`flex flex-col min-h-screen items-center justify-center py-2 ${inter.className}`}>
+        <header className='container flex items-center'>
           <Header />
         </header>
-        <main className='grow container'>
-        {children}
+        <main className='grow container flex items-center'>
+          {children}
         </main>
-        <footer className='container'>
+        <footer className='container flex items-center'>
           <p>
             Copyright@ papyprus
           </p>
         </footer>
-        </body>
+      </body>
     </html>
   )
 }
