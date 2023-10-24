@@ -7,6 +7,7 @@
     -[] testing lby
     -[x] tailwind
     -[x] framer-motion
+    -[x] nextui
     -[x] zod
     -[x] react-hook-form
     -[x] tiptap

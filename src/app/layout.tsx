@@ -3,7 +3,7 @@ import './globals.css'
 import Header from '@/components/Header/Header'
 import { Inter } from 'next/font/google'
 import Provider from '@/lib/auth/provider'
-import { NextUIProvider } from "@nextui-org/react";
+import UiProvider from '@/lib/UiProvider'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -19,9 +19,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-br">
-      <NextUIProvider>
-        <Provider>
-          <body className={`flex flex-col min-h-screen items-center text-content bg-background ${inter.className}`}>
+      <Provider>
+        <body className={`flex flex-col min-h-screen items-center text-content bg-background ${inter.className}`}>
+          <UiProvider>
             <header className='container'>
               <Header />
             </header>
@@ -33,9 +33,9 @@ export default function RootLayout({
                 Copyright@ papyprus
               </p>
             </footer>
-          </body>
-        </Provider>
-      </NextUIProvider>
+          </UiProvider>
+        </body>
+      </Provider>
     </html>
   )
 }
