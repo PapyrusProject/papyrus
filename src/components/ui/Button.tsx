@@ -1,4 +1,4 @@
-import { ButtonHTMLAttributes, ReactNode     } from "react";
+import { ButtonHTMLAttributes, ReactNode } from "react";
 import { type VariantProps, tv } from "tailwind-variants";
 
 const buttonVariants = tv({
@@ -23,20 +23,17 @@ const buttonVariants = tv({
 export type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> &
   VariantProps<typeof buttonVariants> & {
     children?: ReactNode;
-    icon?: ReactNode;
   };
 
 export const Button = ({
   className,
   variant,
   size,
-  icon,
   children = "",
   ...props
 }: ButtonProps) => {
   return (
     <button className={buttonVariants({ variant, className, size })} {...props}>
-      {icon}
       {children}
     </button>
   );
