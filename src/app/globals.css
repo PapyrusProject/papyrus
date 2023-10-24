@@ -1,3 +1,24 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+    :root {
+      --background: '#e6e6e6';
+      --content: '#000000',
+      --primary: '#2664eb';
+      --secondary: '#0f172a';
+      --emphasize: '#64748b';
+      --success: '#339966';
+      --error: '#ef4444';
+      --border: '#2563eb';//#TODO Escolher cores para borda, input e DARK MODE
+      --input: '#e2e8f0';//#TODO
+      --radius: 0.5rem;
+    }
+   
+    .dark {
+      --background: '	#020817';
+      --primary: '	#3b82f6';
+    }
+  }
+  

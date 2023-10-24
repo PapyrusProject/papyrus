@@ -17,6 +17,8 @@
     "react-dom": "^18",
     "react-hook-form": "^7.47.0",
     "react-icons": "^4.11.0",
+    "tailwind-merge": "^1.14.0",
+    "tailwind-variants": "^0.1.15",
     "tiptap": "^1.32.2",
     "zod": "^3.22.4",
     "zustand": "^4.4.4"
