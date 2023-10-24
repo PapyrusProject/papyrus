@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import './globals.css'
 import Header from '@/components/Header/Header'
 import { Inter } from 'next/font/google'
+import Provider from '@/lib/auth/provider'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -17,19 +18,21 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-br">
-      <body className={`flex flex-col min-h-screen items-center text-content bg-background ${inter.className}`}>
-        <header className='container'>
-          <Header />
-        </header>
-        <main className='grow container flex items-center'>
-          {children}
-        </main>
-        <footer className='container flex items-center'>
-          <p>
-            Copyright@ papyprus
-          </p>
-        </footer>
-      </body>
+      <Provider>
+        <body className={`flex flex-col min-h-screen items-center text-content bg-background ${inter.className}`}>
+          <header className='container'>
+            <Header />
+          </header>
+          <main className='grow container flex items-center'>
+            {children}
+          </main>
+          <footer className='container flex items-center'>
+            <p>
+              Copyright@ papyprus
+            </p>
+          </footer>
+        </body>
+      </Provider>
     </html>
   )
 }

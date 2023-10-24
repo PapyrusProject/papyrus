@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/*#TODO Escolher cores para borda, input e DARK MODE*/
+/*TODO Escolher cores para borda, input e DARK MODE*/
 @layer base {
   :root {
     --background: 0 0% 90%;

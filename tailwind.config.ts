@@ -1,6 +1,6 @@
 import type { Config } from "tailwindcss";
 
-//#TODO Escolher cores para borda, input e DARK MODE
+//TODO Escolher cores para borda, input e DARK MODE
 
 const config: Config = {
   content: [
