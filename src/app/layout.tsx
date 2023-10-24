@@ -17,7 +17,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-br">
-      <body className={`flex flex-col min-h-screen items-center ${inter.className}`}>
+      <body className={`flex flex-col min-h-screen items-center text-content bg-background ${inter.className}`}>
         <header className='container'>
           <Header />
         </header>
