@@ -7,8 +7,8 @@ import {BiSolidUser} from 'react-icons/bi'
 export const ProfileUnauthorized = () => {
     return(
         <div className="flex items-center gap-4">
-            <Button variant={'primary'} icon={<BiSolidUser />} >SignUp</Button>
-            <Button variant={'secondary'}>Login</Button>
+            <Button variant={'blue'} icon={<BiSolidUser />} >SignUp</Button>
+            <Button variant={'white'}>Login</Button>
         </div>
     )
 }

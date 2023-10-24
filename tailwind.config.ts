@@ -1,24 +1,25 @@
-import type { Config } from 'tailwindcss'
+import type { Config } from "tailwindcss";
+
+//#TODO Escolher cores para borda, input e DARK MODE
 
 const config: Config = {
   content: [
-    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
+    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    //container: {}  #TODO vai querer setar um container específico || #TODO responsiveVariants TV
     extend: {
-      colors:{
-        background: 'var(--background)',
-        content: 'var(--content)', 
-        primary: 'var(--primary)',
-        secondary: 'var(--secondary)',
-        emphasize: 'var(--emphasize)',
-        success: 'var(--success)',
-        error: 'var(--error)',
-        border: 'var(--border)',
-        input: 'var(--input)',
+      colors: {
+        background: "hsl(var(--background))",
+        content: "hsl(var(--content))",
+        primary: "hsl(var(--primary))",
+        secondary: "hsl(var(--secondary))",
+        emphasize: "hsl(var(--emphasize))",
+        success: "hsl(var(--success))",
+        error: "hsl(var(--error))",
+        border: "hsl(var(--border))",
+        input: "hsl(var(--input))",
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -28,5 +29,5 @@ const config: Config = {
     },
   },
   plugins: [],
-}
-export default config
+};
+export default config;

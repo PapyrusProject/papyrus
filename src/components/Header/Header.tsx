@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Header() {
   return (
-    <section>
+    <section className="flex items-center justify-between">
       <h2 className="text-2xl">Papy<span className="text-primary">rus.</span></h2>
       <div>
         <Link href='/about'>About</Link>
