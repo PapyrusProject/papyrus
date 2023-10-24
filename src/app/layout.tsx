@@ -17,8 +17,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-br">
-      <body className={`flex flex-col min-h-screen items-center justify-center py-2 ${inter.className}`}>
-        <header className='container flex items-center'>
+      <body className={`flex flex-col min-h-screen items-center text-content bg-background ${inter.className}`}>
+        <header className='container'>
           <Header />
         </header>
         <main className='grow container flex items-center'>
