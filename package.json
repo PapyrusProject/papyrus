@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@nextui-org/react": "^2.1.13",
     "@hookform/resolvers": "^3.3.2",
     "axios": "^1.5.1",
     "framer-motion": "^10.16.4",
