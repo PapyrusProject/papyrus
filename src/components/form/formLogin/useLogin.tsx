@@ -1,18 +1,19 @@
 // React hook form
 import { useForm } from "react-hook-form";
-
+import {zodResolver} from '@hookform/resolvers/zod'
 // Types
-import { schemaProps } from "@/components/form/formLogin/schema";
+import { schema, schemaProps } from "@/components/form/formLogin/schema";
 
 export const useLogin = () => {
   // RHF - Config
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isSubmitting },
   } = useForm<schemaProps>({
     mode: "onBlur",
     criteriaMode: "all",
+    resolver: zodResolver(schema),
     defaultValues: {
       username: "",
       password: "",
@@ -26,8 +27,12 @@ export const useLogin = () => {
 
     // #TODO tratar errors
     // #TODO LOADING in button
-    
-    console.log(JSON.stringify(data));
+    return new Promise(resolve => {
+      setTimeout(() => {
+        resolve();
+        console.log(JSON.stringify(data));
+      }, 5000);
+  });
   };
 
   return {
@@ -35,5 +40,6 @@ export const useLogin = () => {
     handleSubmit,
     errors,
     handleForm,
+    isSubmitting
   };
 };

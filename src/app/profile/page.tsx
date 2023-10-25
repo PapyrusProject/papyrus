@@ -1,8 +1,9 @@
+import { LoginForm } from "@/components/form/formLogin/LoginForm";
 
 export default function Profile() {
     return(
         <>
-         <h1>Profile</h1>
+         <LoginForm />
         </>
     )
 }

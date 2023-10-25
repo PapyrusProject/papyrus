@@ -8,7 +8,7 @@ VariantProps<typeof inputVariants> & {
 }
 
 const inputVariants = tv({
-    base: 'p-2 border ourline-none rounded-xl',
+    base: 'p-2 border outline-none rounded-xl focus:border-blue-400',
     variants: {
         variant: {
             default: 'border-primary',
