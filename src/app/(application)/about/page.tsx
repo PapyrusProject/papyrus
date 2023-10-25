@@ -40,7 +40,7 @@ export default function About() {
             <div className="flex items-center justify-center py-10 bg-primary">
                 <div className="flex flex-col items-center justify-center gap-3 py-8 border-2 border-white rounded-lg w-[95%]">
                     <h1 className="text-4xl font-normal text-white ml-7">Edit all your texts with Papyrus.</h1>
-                    <p className="text-white">Start right now, and don't delay.</p>
+                    <p className="text-white">Start right now, and dont delay.</p>
 
 
                 </div>
