@@ -3,6 +3,8 @@ import './globals.css'
 import Header from '@/components/Header/Header'
 import { Inter } from 'next/font/google'
 import Provider from '@/lib/auth/provider'
+import ModalProvider from '@/lib/modalProvider'
+import LoginModal from '@/components/Modal/LoginModal'
 import UiProvider from '@/lib/UiProvider'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -20,21 +22,22 @@ export default function RootLayout({
   return (
     <html lang="pt-br">
       <Provider>
-        <body className={`flex flex-col min-h-screen items-center text-content bg-background ${inter.className}`}>
-          <UiProvider>
+        <ModalProvider>
+          <body className={`flex flex-col min-h-screen items-center text-content bg-background ${inter.className}`}>
             <header className='container'>
               <Header />
             </header>
-            <main className='grow container flex items-center'>
+            <main className='grow flex items-center'>
               {children}
+              <LoginModal />
             </main>
             <footer className='container flex items-center'>
               <p>
                 Copyright@ papyprus
               </p>
             </footer>
-          </UiProvider>
-        </body>
+          </body>
+        </ModalProvider>
       </Provider>
     </html>
   )
