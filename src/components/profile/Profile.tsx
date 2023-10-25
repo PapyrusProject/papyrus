@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/Button"
 import { BiSolidUser } from 'react-icons/bi'
 
 // Next
-import { useSession } from "next-auth/react"
+import { signOut, useSession } from "next-auth/react"
 import Link from "next/link"
 
 export const ProfileUnauthorized = () => {
@@ -24,7 +24,7 @@ export const ProfileUnauthorized = () => {
     return(
         <div className="flex items-center gap-4">
            <Link href='/profile' className="hover:text-primary">Profile</Link> 
-           <Button variant={'blue'}>SignOut</Button>
+           <Button variant={'blue'} onClick={() => signOut()}>SignOut</Button>
         </div>
     )
 }

@@ -12,6 +12,7 @@ export const LoginForm = () => {
 
   return (
     <form onSubmit={handleSubmit(handleForm)} className="flex flex-col items-center justify-center">
+      <label>Username:</label>
       <Input
         type="text"
         variant={errors.username ? 'error' : 'default'}
@@ -19,6 +20,7 @@ export const LoginForm = () => {
         {...register("username")}
         error={errors.username?.message}
       />
+      <label>Password:</label>
       <Input
         type="password"
         variant={errors.password ? 'error' : 'default'}

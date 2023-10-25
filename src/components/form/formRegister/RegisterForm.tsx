@@ -18,6 +18,7 @@ export const RegisteForm = () => {
       className="flex flex-col item-center justify-center gap-2"
       onSubmit={handleSubmit(handleRegister)}
     >
+      <label>Email:</label>
       <Input
         type="email"
         variant={errors.email ? 'error' : 'default'}
@@ -25,6 +26,7 @@ export const RegisteForm = () => {
         {...register("email")}
         error={errors.email?.message}
       />
+      <label>Username:</label>
       <Input
         type="text"
         variant={errors.username ? 'error' : 'default'}
@@ -32,6 +34,7 @@ export const RegisteForm = () => {
         {...register("username")}
         error={errors.username?.message}
       />
+      <label>Password:</label>
       <Input
         type="password"
         variant={errors.password ? 'error' : 'default'}
@@ -39,6 +42,7 @@ export const RegisteForm = () => {
         {...register("password")}
         error={errors.password?.message}
       />
+      <label>Confirm password:</label>
       <Input
         type="password"
         variant={errors.confirmPassword ? 'error' : 'default'}
