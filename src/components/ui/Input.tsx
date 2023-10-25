@@ -8,7 +8,7 @@ VariantProps<typeof inputVariants> & {
 }
 
 const inputVariants = tv({
-    base: 'p-2 border ourline-none',
+    base: 'p-2 border ourline-none rounded-xl',
     variants: {
         variant: {
             default: 'border-primary',
@@ -24,7 +24,7 @@ const inputVariants = tv({
 export const Input = React.forwardRef<HTMLInputElement, InputProps>(
     function Input({variant, className, error = '', ...props}, ref){
         return(
-            <div>
+            <div className="flex flex-col items-start gap-1">
                 <input 
                 className={inputVariants({variant, className})}
                 {...props}
