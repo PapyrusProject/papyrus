@@ -9,17 +9,19 @@ import { BiSolidUser } from 'react-icons/bi'
 import { signOut, useSession } from "next-auth/react"
 import Link from "next/link"
 import { useLogin } from "@/store/useLogin"
+import { useSignup } from "@/store/useSignup"
 
 export const ProfileUnauthorized = () => {
     const { data: session } = useSession()
 
-    const setShow = useLogin((state) => state.toggleLogin)
+    const setLogin = useLogin((state) => state.toggleLogin)
+    const setSignup = useSignup((state) => state.toggleSignup)
 
     if (!session) {
         return (
             <div className="flex items-center gap-4">
-                <Button variant={'blue'}><BiSolidUser />SignUp</Button>
-                <Button variant={'white'} onClick={() => setShow()}>Login</Button>
+                <Button variant={'blue'} onClick={() => setSignup()}><BiSolidUser />SignUp</Button>
+                <Button variant={'white'} onClick={() => setLogin()}>Login</Button>
             </div>
         )
     }
