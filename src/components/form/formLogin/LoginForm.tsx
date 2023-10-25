@@ -16,11 +16,11 @@ export const LoginForm = () => {
         error={errors.username?.message}
       />
       <Input
-        type="text"
+        type="password"
         {...register("password")}
         error={errors.password?.message}
       />
-      <Button variant="blue">
+      <Button variant="blue" type="submit">
         Entrar
         </Button>
     </form>
