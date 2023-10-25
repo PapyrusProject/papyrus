@@ -1,8 +1,10 @@
 'use client';
 
-import { useLogin } from "@/context/login-context";
+//store
+import { useLogin } from "@/store/useLogin";
+
+//modal
 import { Modal, ModalContent, ModalHeader, ModalBody, ModalFooter } from "@nextui-org/react";
-import { create } from "zustand";
 
 export default function LoginModal() {
 
@@ -13,7 +15,7 @@ export default function LoginModal() {
             <ModalContent>
                 <ModalHeader onClick={() => setShow()}></ModalHeader>
                 <ModalBody>
-                    <p>Teste Modal</p>
+                    <p>Login</p>
                 </ModalBody>
                 <ModalFooter></ModalFooter>
             </ModalContent>

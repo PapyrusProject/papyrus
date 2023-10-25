@@ -2,9 +2,9 @@
 
 // Components
 import { Button } from "@/components/ui/Button"
-import { useLogin } from "@/context/login-context";
-import { LoginContext } from "@/context/modal-context"
-import { useContext } from "react"
+
+//store
+import { useLogin } from "@/store/useLogin";
 
 // Icons
 import { BiSolidUser } from 'react-icons/bi'
