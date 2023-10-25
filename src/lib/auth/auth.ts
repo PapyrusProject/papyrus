@@ -14,7 +14,7 @@ export const configAuth: NextAuthOptions = {
         password: { label: "Password", type: "password" },
       },
 
-      async authorize(credentials, req) {
+      async authorize(credentials) {
         if (!credentials?.username || !credentials.password) {
           return null;
         }
