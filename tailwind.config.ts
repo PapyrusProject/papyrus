@@ -22,6 +22,8 @@ const config: Config = {
         error: "hsl(var(--error))",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
+        light_blue: "hsl(var(--light-blue))",
+        dark_blue: "hsl(var(--dark-blue))",
       },
       borderRadius: {
         lg: "var(--radius)",
