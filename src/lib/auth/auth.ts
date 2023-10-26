@@ -11,40 +11,36 @@ export const configAuth: NextAuthOptions = {
     CredentialsProvider({
       name: "credentials",
       credentials: {
-        email: {label: 'Email', type: 'email'},
         username: { label: "Username", type: "text" },
         password: { label: "Password", type: "password" },
       },
-      async authorize(credentials) {
-
-        const payload = {
+      async authorize(credentials, req) {
+        const res = await api.post("auth/login", {
           username: credentials?.username,
-          password: credentials?.password
+          password: credentials?.password,
+        });
+
+        const user = await res.data;
+
+        if (user) {
+          return user;
+        } else {
+          return null;
         }
-
-        const res = await fetch('https://papyrus-backend.onrender.com/v1/auth/login',{
-          method: 'POST',
-          headers: {'Content-Type': 'application/json'},
-          body: JSON.stringify(payload)
-        })
-
-       const user = await res.json()
-        // If error
-       if(!res.ok){
-        throw new Error('Erro na autenticação!')
-      }
-
-      // If no error, get Data and return it
-      if(res.ok){
-        return user
-      }
-      // Return null if user data could not be retrieved
-      return null
-    },
+      },
     }),
   ],
-  session: {
-    strategy: "jwt",
+  callbacks: {
+    async jwt({ token, user }) {
+      return { ...token, ...user };
+    },
+    async session({ session, token }) {
+      session.user = token as any;
+      return session;
+    },
+  },
+  pages: {
+    error: "/",
   },
   //secret: process.env.NEXTAUTH_SECRET,
   debug: process.env.NODE_ENV === "development",

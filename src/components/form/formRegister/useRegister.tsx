@@ -6,52 +6,60 @@ import { schemaProps } from "@/components/form/formRegister/schema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { schema } from "@/components/form/formRegister/schema";
 import { api } from "@/services/api";
+import { SyntheticEvent } from "react";
 import axios from "axios";
+import { redirect } from "next/navigation";
 
 export const useRegister = () => {
-    // RHF - Config
-    const {
-        register,
-        handleSubmit,
-        formState: { errors, isSubmitting },
-      } = useForm({
-        mode: "all",
-        criteriaMode: "all",
-        resolver: zodResolver(schema),
-        defaultValues: {
-          email: "",
-          username: "",
-          password: "",
-          confirmPassword: "",
-        },
-      });
-    
-      // #TODO POST request for register usre
-      const handleRegister = async (data: schemaProps) => {
-        const user = {email: data.email, username: data.username, password: data.password}
-        try {
-          const request = await axios.post('https://papyrus-backend.onrender.com/v1/auth/register', {
-            method: 'POST',
-            headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify(user)
-          })
+  // RHF - Config
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isSubmitting },
+  } = useForm({
+    mode: "all",
+    criteriaMode: "all",
+    resolver: zodResolver(schema),
+    defaultValues: {
+      email: "",
+      username: "",
+      password: "",
+      confirmPassword: "",
+    },
+  });
 
-          const res = await request.data
-
-          if(res.ok){
-            console.log(res)
-          }
-
-        }catch(err){
-          console.log('error: ', err)
+  // #TODO POST request for register usre
+  const handleRegister = async (data: schemaProps) => {
+    try {
+      const res = await fetch(
+        "https://papyrus-backend.onrender.com/v1/auth/register",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            email: data.email,
+            username: data.username,
+            password: data.password
+          }),
         }
-      };
-
-    return{
-        register,
-        handleSubmit,
-        handleRegister,
-        errors,
-        isSubmitting
+      );
+      const request = await res.json()
+        if(res.ok){
+          redirect('/')
+        }
+      console.log(request)
+      // #TODO tratar melhor os erros e retorno do 200
+    } catch (err) {
+      console.log(err);
+      redirect('/')
     }
-}
+  };
+
+  return {
+    register,
+    handleSubmit,
+    handleRegister,
+    errors,
+    isSubmitting,
+  };
+};

@@ -5,13 +5,13 @@ import { useRegister } from "@/components/form/formRegister/useRegister";
 // Components
 import { Button } from "@/components/ui/Button";
 import { Input } from "@/components/ui/Input";
+import React from "react";
 
-// Icons
+// Icon
 import { ImSpinner8 } from "react-icons/im";
 
 export const RegisteForm = () => {
-  const { errors, handleRegister, handleSubmit, register, isSubmitting } =
-    useRegister();
+  const { errors, handleRegister, handleSubmit, register, isSubmitting } = useRegister();
 
   return (
     <form
