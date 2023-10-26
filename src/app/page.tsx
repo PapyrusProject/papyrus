@@ -3,6 +3,7 @@ import { CardHomePage } from "@/components/ui/CardHomePage";
 import { AiOutlineArrowRight } from "react-icons/ai";
 import { HiOutlineComputerDesktop, HiCodeBracket } from "react-icons/hi2";
 import { HiOutlineViewGridAdd } from "react-icons/hi";
+import Link from "next/link";
 
 const cardList = [
   {
@@ -35,7 +36,7 @@ export default function Home() {
         <h2 className="text-2xl font-semibold">Your Text Organization and Editing Platform.</h2>
         <p className="w-2/3 text-sm">
           All-in-one Text Organization and Editing Platform. Streamline your workflow with intuitive note-taking,
-          task management, and seamless document editing. Boost your productivity and creativity with Papyrus today.
+          task management, and seamless document editing. Boost your productivity and creativity with Papyrus today, <Link className="text-primary" href="/about">Click here</Link> to learn more.
         </p>
         <section className="flex mt-8 gap-2 md:w-[50%]">
           <Button size="xl" variant="blue">View All Pages <AiOutlineArrowRight size={18} color="#fff"/> </Button>
