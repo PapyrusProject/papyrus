@@ -28,10 +28,15 @@ export const useLogin = () => {
 
   // Send LOGIN request to API
   const handleForm = async (data: schemaProps) => {
-    signIn('credentials',{
-      ...data,
-      callbackUrl: '/',
+    const res = await signIn('credentials',{
+      redirect: false,
+      username: data.username,
+      password: data.password,
     })
+
+    if (res?.error) {
+      console.log('usuário não existe')
+    }
   };
 
   return {

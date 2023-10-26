@@ -2,11 +2,11 @@
 import { useForm } from "react-hook-form";
 
 // Types
-import { schemaProps } from "@/components/form/formLogin/schema";
+import { schemaProps } from "@/components/form/formRegister/schema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { schema } from "@/components/form/formRegister/schema";
 import { api } from "@/services/api";
-import { redirect } from "next/navigation";
+import axios from "axios";
 
 export const useRegister = () => {
     // RHF - Config
@@ -28,18 +28,21 @@ export const useRegister = () => {
     
       // #TODO POST request for register usre
       const handleRegister = async (data: schemaProps) => {
-        try{
-          const response = await api.post('/auth/register',{
+        const user = {email: data.email, username: data.username, password: data.password}
+        try {
+          const request = await axios.post('https://papyrus-backend.onrender.com/v1/auth/register', {
             method: 'POST',
-            headers: {
-              'content-type': 'application/json'
-            },
-            body: JSON.stringify(data)
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify(user)
           })
-          const userInfo = await response.data
-          console.log(userInfo)
+
+          const res = await request.data
+
+          if(res.ok){
+            console.log(res)
+          }
+
         }catch(err){
-          //#TODO Tratar melhor erro
           console.log('error: ', err)
         }
       };
