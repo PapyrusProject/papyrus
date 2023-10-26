@@ -3,7 +3,7 @@ import { PiGithubLogoFill, PiDiscordLogoFill } from "react-icons/pi";
 
 export default function Footer() {
     return (
-        <div className="flex ">
+        <div className="flex justify-center items-center gap-4">
             <p>
                 Copyright@ papyprus
             </p>
