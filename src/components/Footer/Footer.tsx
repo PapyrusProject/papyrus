@@ -12,7 +12,7 @@ export default function Footer() {
         <div className="flex justify-end items-center gap-4 w-full py-6">
             <div className="flex justify-between w-[55%]">
                 <p>
-                    Copyright&copy; papyprus
+                    Copyright&copy;papyprus
                 </p>
                 <button className="text-primary flex items-center justify-center gap-2 hover:underline" onClick={() => setContact()}>Contact <RiSendPlaneFill className="text-primary text-xl" /></button>
             </div>
