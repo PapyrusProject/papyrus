@@ -6,7 +6,7 @@ const buttonVariants = tv({
   variants: {
     variant: {
       blue: "bg-primary text-white hover:bg-transparent hover:text-primary hover:border-primary",
-      white: "bg-transparent hover:bg-primary hover:text-white border-primary",
+      white: "bg-transparent hover:bg-primary text-primary hover:text-white border-primary",
       loading: 'bg-stone-400',
       lightBlue: "bg-light_blue text-dark_blue hover:bg-primary hover:text-white font-semibold"
     },
