@@ -1,24 +1,23 @@
 'use client';
 
 //store
-import { useLogin } from "@/store/useLogin";
+import { useSignup } from "@/store/useSignup";
 
 //modal
 import { Modal, ModalContent, ModalHeader, ModalBody, ModalFooter } from "@nextui-org/react";
-import { LoginForm } from "../form/formLogin/LoginForm";
+import { RegisteForm } from "../form/formRegister/RegisterForm";
 
-export default function LoginModal() {
+export default function SignupModal() {
 
-    const [show, setShow] = useLogin((state) => [state.login, state.toggleLogin])
+    const [show, setShow] = useSignup((state) => [state.signup, state.toggleSignup])
 
     return (
         <Modal isOpen={show} onOpenChange={setShow}>
             <ModalContent>
                 <ModalHeader onClick={() => setShow()}></ModalHeader>
                 <ModalBody className="flex flex-col justify-center items-center">
-                    <h1 className="text-primary text-4xl font-bold">Papyrus</h1>
-                    <h2 className="font-semibold text-2xl">Login</h2>
-                    <LoginForm />
+                    <h1 className="text-primary text-4xl font-bold">Sign Up</h1>
+                    <RegisteForm />
                 </ModalBody>
                 <ModalFooter></ModalFooter>
             </ModalContent>

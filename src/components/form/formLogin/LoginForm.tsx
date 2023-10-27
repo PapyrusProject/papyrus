@@ -5,13 +5,13 @@ import { useLogin } from "@/components/form/formLogin/useLogin";
 // Components
 import { Input } from "@/components/ui/Input";
 import { Button } from "@/components/ui/Button";
-import {ImSpinner8} from 'react-icons/im'
+import { ImSpinner8 } from 'react-icons/im'
 
 export const LoginForm = () => {
-  const {errors, handleForm, handleSubmit, register, isSubmitting} = useLogin()
+  const { errors, handleForm, handleSubmit, register, isSubmitting } = useLogin()
 
   return (
-    <form onSubmit={handleSubmit(handleForm)} className="flex flex-col items-center justify-center">
+    <form onSubmit={handleSubmit(handleForm)} className="flex flex-col items-center gap-4 justify-center">
       <label>Username:</label>
       <Input
         type="text"
@@ -31,7 +31,7 @@ export const LoginForm = () => {
       <Button variant={isSubmitting ? 'loading' : 'blue'} type="submit" disabled={isSubmitting}>
         {isSubmitting && <span className="animate-spin"><ImSpinner8 /></span>}
         Entrar
-        </Button>
+      </Button>
     </form>
   );
 };
