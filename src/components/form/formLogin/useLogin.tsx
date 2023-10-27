@@ -3,12 +3,8 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 // Types
 import { schema, schemaProps } from "@/components/form/formLogin/schema";
-import React, { SyntheticEvent } from "react";
-import { useGet } from "@/hooks/useFetch";
-import { api } from "@/services/api";
+import { SyntheticEvent } from "react";
 import { signIn } from "next-auth/react";
-import { redirect } from "next/navigation";
-import { useRouter } from "next/router";
 
 export const useLogin = () => {
   // RHF - Config

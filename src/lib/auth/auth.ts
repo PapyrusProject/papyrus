@@ -1,6 +1,5 @@
 //next-auth
-import { api } from "@/services/api";
-import axios from "axios";
+import { instance } from "@/services/api";
 import { NextAuthOptions } from "next-auth";
 
 //Providers
@@ -15,7 +14,7 @@ export const configAuth: NextAuthOptions = {
         password: { label: "Password", type: "password" },
       },
       async authorize(credentials, req) {
-        const res = await api.post("auth/login", {
+        const res = await instance.post("auth/login", {
           username: credentials?.username,
           password: credentials?.password,
         });

@@ -10,13 +10,13 @@ import { signOut, useSession } from "next-auth/react";
 import Link from "next/link";
 
 export const ProfileUnauthorized = () => {
-  const { data: session, status } = useSession();
+  const {data: session, status } = useSession();
 
   if (status === "authenticated") {
     return(
     <div className="flex items-center gap-4">
       <Link href="/profile" className="hover:text-primary">
-        {session?.user.message}
+        Profile
       </Link>
       <Button variant={"blue"} onClick={() => signOut({redirect: false, callbackUrl: '/'})}>
         SignOut

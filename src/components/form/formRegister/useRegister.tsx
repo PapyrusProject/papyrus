@@ -5,9 +5,7 @@ import { useForm } from "react-hook-form";
 import { schemaProps } from "@/components/form/formRegister/schema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { schema } from "@/components/form/formRegister/schema";
-import { api } from "@/services/api";
-import { SyntheticEvent } from "react";
-import axios from "axios";
+import { instance } from "@/services/api";
 import { redirect } from "next/navigation";
 
 export const useRegister = () => {
@@ -15,6 +13,7 @@ export const useRegister = () => {
   const {
     register,
     handleSubmit,
+    setError,
     formState: { errors, isSubmitting },
   } = useForm({
     mode: "all",
@@ -46,11 +45,12 @@ export const useRegister = () => {
       const request = await res.json()
         if(res.ok){
           redirect('/')
+        }else{
+          setError('root', request)
         }
       console.log(request)
       // #TODO tratar melhor os erros e retorno do 200
     } catch (err) {
-      console.log(err);
       redirect('/')
     }
   };
