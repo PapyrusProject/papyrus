@@ -13,6 +13,7 @@ import LoginModal from '@/components/Modal/LoginModal'
 import Header from '@/components/Header/Header'
 import SignupModal from '@/components/Modal/SignUpModal'
 import Footer from '@/components/Footer/Footer'
+import ContactModal from '@/components/Modal/ContactModal'
 
 //font
 const inter = Inter({ subsets: ['latin'] })
@@ -41,6 +42,7 @@ export default function RootLayout({
             {children}
             <LoginModal />
             <SignupModal />
+            <ContactModal />
           </main>
           <footer className='container flex justify-center items-center'>
             <Footer />
