@@ -1,6 +1,5 @@
 // Components
-import { LoginForm } from "@/components/form/formLogin/LoginForm";
-import { RegisteForm } from "@/components/form/formRegister/RegisterForm";
+
 
 export default function Profile() {
 

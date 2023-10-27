@@ -1,5 +1,5 @@
 //next-auth
-import { api } from "@/services/api";
+import { instance } from "@/services/api";
 import { NextAuthOptions } from "next-auth";
 
 //Providers
@@ -13,18 +13,33 @@ export const configAuth: NextAuthOptions = {
         username: { label: "Username", type: "text" },
         password: { label: "Password", type: "password" },
       },
+      async authorize(credentials, req) {
+        const res = await instance.post("auth/login", {
+          username: credentials?.username,
+          password: credentials?.password,
+        });
 
-      async authorize(credentials) {
-        if (!credentials?.username || !credentials.password) {
+        const user = await res.data;
+
+        if (user) {
+          return user;
+        } else {
           return null;
         }
-        const user = credentials
-        return user;
       },
     }),
   ],
-  session: {
-    strategy: "jwt",
+  callbacks: {
+    async jwt({ token, user }) {
+      return { ...token, ...user };
+    },
+    async session({ session, token }) {
+      session.user = token as any;
+      return session;
+    },
+  },
+  pages: {
+    error: "/",
   },
   //secret: process.env.NEXTAUTH_SECRET,
   debug: process.env.NODE_ENV === "development",
