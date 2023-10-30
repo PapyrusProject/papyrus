@@ -79,7 +79,7 @@ export default function AboutStatusItems() {
                             </div>
                             <h3 className="font-bold">{i.title}</h3>
                             <p>
-                                "{i.paragraph}"
+                                {i.paragraph}
                             </p>
                         </div>
                     )
