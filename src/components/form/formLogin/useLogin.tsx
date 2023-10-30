@@ -3,7 +3,6 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 // Types
 import { schema, schemaProps } from "@/components/form/formLogin/schema";
-import { SyntheticEvent } from "react";
 import { signIn } from "next-auth/react";
 
 export const useLogin = () => {
@@ -25,9 +24,7 @@ export const useLogin = () => {
   });
 
   // Function that send LOGIN data to NextAuth
-  const handleForm = async (data: schemaProps, e: SyntheticEvent) => {
-    e.preventDefault();
-
+  const handleForm = async (data: schemaProps) => {
     const res = await signIn("credentials", {
       username: data.username,
       password: data.password,
