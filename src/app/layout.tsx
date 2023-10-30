@@ -44,7 +44,7 @@ export default function RootLayout({
             <SignupModal />
             <ContactModal />
           </main>
-          <footer className='container flex justify-center items-center'>
+          <footer className='container flex justify-center'>
             <Footer />
           </footer>
         </body>
