@@ -29,7 +29,7 @@ export const ProfileUnauthorized = () => {
     return (
         <div className="flex items-center gap-4">
             <Link href='/profile' className="hover:text-primary">Profile</Link>
-            <Button variant={'blue'} onClick={() => signOut()}>SignOut</Button>
+            <Button variant={'blue'} onClick={() => signOut({ callbackUrl: '/' })}>SignOut</Button>
         </div>
     )
-  }
+}
