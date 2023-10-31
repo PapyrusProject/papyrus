@@ -1,4 +1,4 @@
-import { ProfileUnauthorized } from "@/components/profile/Profile";
+import { ProfileUnauthorized } from "@/app/(application)/_components/Profile";
 import Link from "next/link";
 
 export default function Header() {

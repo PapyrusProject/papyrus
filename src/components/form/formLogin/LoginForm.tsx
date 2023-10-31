@@ -6,7 +6,7 @@ import { useLogin } from "@/components/form/formLogin/useLogin";
 import { Input } from "@/components/ui/Input";
 import { Button } from "@/components/ui/Button";
 import { ImSpinner8 } from 'react-icons/im'
-import { GoogleButtons } from "@/components/Button/ButtonProvider";
+import { GoogleButtons } from "@/app/(application)/_components/SocialLogin";
 
 export const LoginForm = () => {
   const { errors, handleForm, handleSubmit, register, isSubmitting } = useLogin()

@@ -6,14 +6,7 @@ import { Inter } from 'next/font/google'
 import type { Metadata } from 'next'
 
 //providers
-import Provider from '@/lib/auth/provider'
-
-//components
-import LoginModal from '@/components/Modal/LoginModal'
-import Header from '@/components/Header/Header'
-import SignupModal from '@/components/Modal/SignUpModal'
-import Footer from '@/components/Footer/Footer'
-import ContactModal from '@/components/Modal/ContactModal'
+import Provider from '@/components/providers/Provider';
 
 //font
 const inter = Inter({ subsets: ['latin'] })
@@ -32,21 +25,8 @@ export default function RootLayout({
   return (
     <html lang="pt-br">
       <Provider>
-        <body
-          className={`flex flex-col min-h-screen items-center text-content bg-background ${inter.className}`}
-        >
-          <header className="container">
-            <Header />
-          </header>
-          <main className='grow flex items-center'>
-            {children}
-            <LoginModal />
-            <SignupModal />
-            <ContactModal />
-          </main>
-          <footer className='container flex justify-center'>
-            <Footer />
-          </footer>
+        <body className={`${inter.className}`}>
+          {children}
         </body>
       </Provider>
     </html>
