@@ -7,7 +7,7 @@ type providerProps = {
     children: ReactNode
 }
 
-export default function Provider({ children }: providerProps) {
+export default function ProviderNextAuth({ children }: providerProps) {
     return (
         <SessionProvider>{children}</SessionProvider>
     )

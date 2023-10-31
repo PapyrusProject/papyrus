@@ -5,6 +5,7 @@ import { useRegister } from "@/components/form/formRegister/useRegister";
 // Components
 import { Button } from "@/components/ui/Button";
 import { Input } from "@/components/ui/Input";
+import Spinner from "@/components/ui/Spinner";
 import React from "react";
 
 // Icon
@@ -52,9 +53,7 @@ export const RegisteForm = () => {
       />
       <Button variant={isSubmitting ? 'loading' : 'blue'} type="submit">
         {isSubmitting && (
-          <span className="animate-spin">
-            <ImSpinner8 />
-          </span>
+          <Spinner />
         )}
         Register
       </Button>

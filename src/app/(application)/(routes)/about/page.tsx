@@ -1,6 +1,6 @@
-import CardAbout from "./CardAbout";
+import CardAbout from "../../_components/CardAbout";
 import Image from "next/image";
-import AboutStatusItems from "./AboutstatusItems";
+import AboutStatusItems from "../../_components/AboutstatusItems";
 
 export default function About() {
     return (
