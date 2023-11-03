@@ -2,9 +2,9 @@
 import { useForm } from "react-hook-form";
 
 // Types
-import { schemaProps } from "@/components/form/formRegister/schema";
+import { schemaProps } from "@/components/form/registerForm/schema";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { schema } from "@/components/form/formRegister/schema";
+import { schema } from "@/components/form/registerForm/schema";
 import { redirect } from "next/navigation";
 
 export const useRegister = () => {
@@ -37,20 +37,20 @@ export const useRegister = () => {
           body: JSON.stringify({
             email: data.email,
             username: data.username,
-            password: data.password
+            password: data.password,
           }),
         }
       );
-      const request = await res.json()
+      const request = await res.json();
       if (res.ok) {
-        redirect('/')
+        redirect("/");
       } else {
-        setError('root', request)
+        setError("root", request);
       }
-      console.log(request)
+      console.log(request);
       // #TODO tratar melhor os erros e retorno do 200
     } catch (err) {
-      redirect('/')
+      redirect("/");
     }
   };
 

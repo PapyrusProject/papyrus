@@ -1,11 +1,20 @@
-import ProviderNextAuth from "./Next-AuthProvider";
+"use client";
+import { NextAuthProvider } from "@/components/providers/nextAuth-provider";
+import { ThemeProvider } from "next-themes";
 
 export default function Provider({ children }: { children: React.ReactNode }) {
-    return (
-        <>
-            <ProviderNextAuth>
-                {children}
-            </ProviderNextAuth>
-        </>
-    )
+  return (
+    <>
+      <NextAuthProvider>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {children}
+        </ThemeProvider>
+      </NextAuthProvider>
+    </>
+  );
 }

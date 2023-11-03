@@ -2,27 +2,21 @@
 // Components
 import { Button } from "@/components/ui/Button";
 
-// Icons
-import { BiSolidUser } from "react-icons/bi";
-
 // Next
 import { signOut, useSession } from "next-auth/react"
 import Link from "next/link"
-import { useLogin } from "@/store/useLogin"
-import { useSignup } from "@/store/useSignup"
 import Spinner from "@/components/ui/Spinner";
+import LoginModal from "@/components/Modal/LoginModal";
+import SignUpModal from "@/components/Modal/SignUpModal";
 
-export const ProfileUnauthorized = () => {
-    const { data: session, status } = useSession()
-
-    const setLogin = useLogin((state) => state.toggleLogin)
-    const setSignup = useSignup((state) => state.toggleSignup)
+export const Sessions = () => {
+    const { status } = useSession()
 
     if (status === 'unauthenticated') {
         return (
-            <div className="flex items-center gap-4">
-                <Button variant={'blue'} onClick={() => setSignup()}><BiSolidUser />SignUp</Button>
-                <Button variant={'white'} onClick={() => setLogin()}>Login</Button>
+            <div className="flex items-center gap-2">
+                <SignUpModal  />
+                <LoginModal />
             </div>
         )
     }
@@ -34,9 +28,9 @@ export const ProfileUnauthorized = () => {
     }
 
     return (
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-2">
             <Link href='/profile' className="hover:text-primary">Profile</Link>
-            <Button variant={'blue'} onClick={() => signOut({ callbackUrl: '/' })}>SignOut</Button>
+            <Button onClick={() => signOut({ callbackUrl: '/' })}>SignOut</Button>
         </div>
     )
 }
