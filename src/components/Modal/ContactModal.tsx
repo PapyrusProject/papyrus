@@ -17,7 +17,7 @@ export const ContactModal = () => {
     <>
       <Dialog>
         <DialogTrigger asChild>
-          <Button variant="outline">Contact <RiSendPlaneFill /></Button>
+          <Button variant="outline" className="text-primary">Contact <RiSendPlaneFill /></Button>
         </DialogTrigger>
         <DialogContent className="sm:max-w-[425px]">
           <DialogHeader>

@@ -8,19 +8,14 @@ export default function HomeLayout({
   children: React.ReactNode;
 }) {
   return (
-    <section className="flex flex-col min-h-screen items-center text-content bg-background">
+    <body className="flex flex-col min-h-screen items-center text-content bg-background">
       <header className="container">
         <Header />
       </header>
-      <main className="grow flex items-center">
-        {children}
-
-        {/* <SignupModal />
-                <ContactModal /> */}
-      </main>
+      <main className="grow flex items-center">{children}</main>
       <footer className="container flex justify-center relative">
         <Footer />
       </footer>
-    </section>
+    </body>
   );
 }

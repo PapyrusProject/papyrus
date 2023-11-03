@@ -28,7 +28,7 @@ export const CardHomePage = () => {
       <CardHeader>
         <CardTitle>
           <div className="flex flex-col gap-3">
-            <div className="text-[#16A34A]">{item.icon}</div>
+            <div className="text-primary">{item.icon}</div>
             <p className="whitespace-nowrap">{item.title}</p>
           </div>
         </CardTitle>
