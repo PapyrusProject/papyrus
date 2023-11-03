@@ -11,7 +11,7 @@ export default function NotFound(){
         <p className="font-bold text-xl text-center">We couldn&lsquo;t find the page you are looking for</p>
       </div>
       <Link href="/">
-        <Button variant="blue" size="xl">
+        <Button>
           Go to home page
         </Button>
       </Link>

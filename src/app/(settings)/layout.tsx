@@ -23,9 +23,9 @@ const SettingsLayout = ({ children }: { children: React.ReactNode }) => {
     <>
       <div className="container min-h-screen flex ">
         <Navigation />
-        <main className="container flex-1 h-full overflow-y-auto mt-5">
+        <section className="container flex-1 h-full overflow-y-auto mt-5">
           {children}
-        </main>
+        </section>
       </div>
     </>
   );

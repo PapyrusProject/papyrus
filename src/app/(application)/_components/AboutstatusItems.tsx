@@ -91,7 +91,7 @@ export default function AboutStatusItems() {
     <>
       {itens.map((i) => {
         return (
-          <Card className="py-4 w-72 flex flex-col justify-center shadow-md" key={i.id}>
+          <Card className="py-4 w-72 bg-secondary flex flex-col justify-center shadow-md" key={i.id}>
             <CardHeader>
               <CardTitle>
                 <div className="flex flex-col items-center gap-3">
