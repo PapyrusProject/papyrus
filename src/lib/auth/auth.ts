@@ -10,7 +10,7 @@ export const configAuth: NextAuthOptions = {
   providers: [
     GoogleProvider({
       clientId: process.env.GOOGLE_CLIENT_ID as string,
-      clientSecret: process.env.GOOGLE_CLIENT_SECRET as string
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET as string,
     }),
 
     CredentialsProvider({
@@ -46,8 +46,8 @@ export const configAuth: NextAuthOptions = {
   },
   pages: {
     error: "/",
-    signIn: "/"
+    signIn: "/",
   },
-  //secret: process.env.NEXTAUTH_SECRET,
-  debug: process.env.NODE_ENV === "development",
+  secret: process.env.NEXTAUTH_SECRET,
+    debug: process.env.NODE_ENV === "development",
 };

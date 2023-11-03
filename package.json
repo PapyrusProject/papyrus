@@ -11,18 +11,31 @@
     "test:watch": "jest --watchAll"
   },
   "dependencies": {
-    "@nextui-org/react": "^2.1.13",
     "@hookform/resolvers": "^3.3.2",
+    "@radix-ui/react-alert-dialog": "^1.0.5",
+    "@radix-ui/react-dialog": "^1.0.5",
+    "@radix-ui/react-dropdown-menu": "^2.0.6",
+    "@radix-ui/react-label": "^2.0.2",
+    "@radix-ui/react-popover": "^1.0.7",
+    "@radix-ui/react-separator": "^1.0.3",
+    "@radix-ui/react-slot": "^1.0.2",
+    "@radix-ui/react-switch": "^1.0.3",
+    "@radix-ui/react-toast": "^1.1.5",
     "axios": "^1.5.1",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.0.0",
     "framer-motion": "^10.16.4",
+    "lucide-react": "^0.291.0",
     "next": "13.5.6",
     "next-auth": "^4.24.3",
+    "next-themes": "^0.2.1",
     "react": "^18",
     "react-dom": "^18",
     "react-hook-form": "^7.47.0",
     "react-icons": "^4.11.0",
     "tailwind-merge": "^1.14.0",
     "tailwind-variants": "^0.1.15",
+    "tailwindcss-animate": "^1.0.7",
     "tiptap": "^1.32.2",
     "zod": "^3.22.4",
     "zustand": "^4.4.4"
@@ -44,7 +57,7 @@
     "jest-environment-jsdom": "29.7.0",
     "postcss": "^8",
     "tailwindcss": "^3",
-    "typescript": "^5",
-    "ts-jest": "29.1.1"
+    "ts-jest": "29.1.1",
+    "typescript": "^5"
   }
 }

@@ -2,7 +2,7 @@
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 // Types
-import { schema, schemaProps } from "@/components/form/formLogin/schema";
+import { schema, schemaProps } from "@/components/form/loginForm/schema";
 import { signIn } from "next-auth/react";
 
 export const useLogin = () => {

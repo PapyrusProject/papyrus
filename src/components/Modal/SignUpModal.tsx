@@ -1,26 +1,29 @@
-'use client';
-
-//store
-import { useSignup } from "@/store/useSignup";
-
 //modal
-import { Modal, ModalContent, ModalHeader, ModalBody, ModalFooter } from "@nextui-org/react";
-import { RegisteForm } from "../form/formRegister/RegisterForm";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import { Button } from "@/components/ui/Button";
+import { RegisteForm } from "@/components/form/registerForm/RegisterForm";
 
-export default function SignupModal() {
-
-    const [show, setShow] = useSignup((state) => [state.signup, state.toggleSignup])
-
-    return (
-        <Modal isOpen={show} onOpenChange={setShow}>
-            <ModalContent>
-                <ModalHeader onClick={() => setShow()}></ModalHeader>
-                <ModalBody className="flex flex-col justify-center items-center">
-                    <h1 className="text-primary text-4xl font-bold">Sign Up</h1>
-                    <RegisteForm />
-                </ModalBody>
-                <ModalFooter></ModalFooter>
-            </ModalContent>
-        </Modal>
-    )
+export default function SignUpModal() {
+  return (
+    <Dialog>
+      <DialogTrigger asChild>
+        <Button >SignUp</Button>
+      </DialogTrigger>
+      <DialogContent className="sm:max-w-[425px]">
+        <DialogHeader>
+          <DialogTitle>Papyrus</DialogTitle>
+          <DialogDescription>Register and go to the notes.</DialogDescription>
+        </DialogHeader>
+        <RegisteForm />
+      </DialogContent>
+    </Dialog>
+  );
 }
