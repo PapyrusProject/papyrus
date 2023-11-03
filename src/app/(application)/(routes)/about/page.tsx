@@ -1,11 +1,13 @@
 import CardAbout from "../../_components/CardAbout";
 import Image from "next/image";
 import AboutStatusItems from "../../_components/AboutstatusItems";
+import { Separator } from "@/components/ui/separator";
 
 export default function About() {
   return (
     <div className="flex flex-col">
-      <h1 className="py-4 text-4xl font-bold text-center text-white bg-primary">
+      <Separator />
+      <h1 className="py-4 text-4xl font-bold text-center text-white bg-primary dark:bg-transparent">
         About
       </h1>
       <section className="container flex flex-col items-center justify-center lg:flex-row py-12 gap-6">
@@ -23,11 +25,11 @@ export default function About() {
           into tangible and inspiring objects.
         </p>
       </section>
-
-      <div className="flex justify-center gap-16 py-10 bg-primary flex-wrap">
+      <Separator />
+      <div className="flex justify-center gap-16 py-10 flex-wrap bg-primary dark:bg-transparent">
         <CardAbout />
       </div>
-
+      <Separator />
       <section className="flex flex-col justify-between px-16 py-12 lg:flex-row">
         <div className="flex flex-col gap-4">
           <h1 className="text-3xl font-bold">Our Mission</h1>
@@ -43,8 +45,8 @@ export default function About() {
         </div>
         <Image src="/rafiki.svg" alt="" width={300} height={300} />
       </section>
-
-      <div className="flex items-center justify-center py-10 bg-primary">
+      <Separator />
+      <div className="flex items-center justify-center py-10 bg-primary dark:bg-transparent">
         <div className="flex flex-col items-center justify-center gap-3 py-8 border-2 border-white rounded-lg w-[95%]">
           <h1 className="text-4xl font-normal text-white ml-7">
             Edit all your texts with Papyrus.
@@ -52,7 +54,7 @@ export default function About() {
           <p className="text-white">Start right now, and dont delay.</p>
         </div>
       </div>
-
+      <Separator />
       <div className="container flex flex-wrap gap-12 my-12 justify-center">
         <AboutStatusItems />
       </div>

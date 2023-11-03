@@ -8,14 +8,14 @@ export default function HomeLayout({
   children: React.ReactNode;
 }) {
   return (
-    <body className="flex flex-col min-h-screen items-center text-content bg-background">
-      <header className="container">
+    <div className="flex flex-col min-h-screen items-center text-content bg-background">
+      <section className="container">
         <Header />
-      </header>
+      </section>
       <main className="grow flex items-center">{children}</main>
       <footer className="container flex justify-center relative">
         <Footer />
       </footer>
-    </body>
+    </div>
   );
 }

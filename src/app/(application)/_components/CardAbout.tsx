@@ -21,7 +21,7 @@ export default function CardAbout() {
     <>
       {itens.map((i) => {
         return (
-          <Card className="w-96 h-56 border-primary shadow-sm cursor-default flex flex-col justify-center"
+          <Card className="w-96 h-56 border-primary shadow-sm cursor-default flex flex-col justify-center bg-secondary"
             key={i.id}
           >
             <CardHeader>
