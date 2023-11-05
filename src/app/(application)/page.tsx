@@ -24,7 +24,11 @@ export default function Home() {
             Papyrus today.
           </p>
           <div className="flex gap-2">
-            <Button size="lg" className="flex items-center gap-2">
+            <Button 
+              size="lg" 
+              className="flex items-center gap-2"
+              onClick={() => router.push("/editor")}
+            >
               Notes
               <AiOutlineArrowRight />
             </Button>
