@@ -17,6 +17,7 @@ export const LoginForm = () => {
       <form onSubmit={handleSubmit(handleForm)} className="flex flex-col gap-3">
         <Label>Username:</Label>
         <Input
+          aria-label="username"
           type="text"
           disabled={isSubmitting}
           {...register("username")}
@@ -24,6 +25,8 @@ export const LoginForm = () => {
         />
         <Label>Password:</Label>
         <Input
+          role="password"
+          aria-label="password"
           type="password"
           disabled={isSubmitting}
           {...register("password")}

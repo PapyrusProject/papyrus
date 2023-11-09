@@ -8,17 +8,20 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 
 export const ContactForm = () => {
-    const {errors, isSubmitting, register} = useContact()
+    const {errors, isSubmitting, register, handleSubmit} = useContact()
 
   return (
     <>
       <form
+        aria-label="contact-form"
         action="https://formsubmit.co/papyrus@developers.org"
+        onSubmit={handleSubmit(() => {})}
         method="POST"
         className="flex flex-col gap-5"
       >
         <Label className="font-semibold">Name:</Label>
         <Input
+          aria-label="username"
           type="text"
           disabled={isSubmitting}
           {...register("username")}
@@ -27,6 +30,7 @@ export const ContactForm = () => {
         />
         <Label className="font-semibold">Email:</Label>
         <Input
+          aria-label="email"
           type="email"
           disabled={isSubmitting}
           {...register("email")}
@@ -36,7 +40,9 @@ export const ContactForm = () => {
         />
         <Label className="font-semibold">Message:</Label>
         <Textarea
+          aria-label="message"
           placeholder="Type your message..."
+          disabled={isSubmitting}
           name="message"
         />
         <Button type="submit">

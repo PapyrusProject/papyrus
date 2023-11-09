@@ -9,7 +9,7 @@ import Spinner from "@/components/ui/Spinner";
 import { Label } from "@/components/ui/label";
 import React from "react";
 
-export const RegisteForm = () => {
+export const RegisterForm = () => {
   const { errors, handleRegister, handleSubmit, register, isSubmitting } =
     useRegister();
 
@@ -20,6 +20,7 @@ export const RegisteForm = () => {
     >
       <Label>Email</Label>
       <Input
+        aria-label="email"
         type="email"
         disabled={isSubmitting}
         {...register("email")}
@@ -27,6 +28,7 @@ export const RegisteForm = () => {
       />
       <Label>Username:</Label>
       <Input
+        aria-label="username"
         type="text"
         disabled={isSubmitting}
         {...register("username")}
@@ -34,6 +36,8 @@ export const RegisteForm = () => {
       />
       <Label>Password:</Label>
       <Input
+        role="password"
+        aria-label="password"
         type="password"
         disabled={isSubmitting}
         {...register("password")}
@@ -41,6 +45,8 @@ export const RegisteForm = () => {
       />
       <Label>Confirm password:</Label>
       <Input
+        role="confirmPassword"
+        aria-label="confirmPassword"
         type="password"
         disabled={isSubmitting}
         {...register("confirmPassword")}

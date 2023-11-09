@@ -3,13 +3,14 @@ import { useForm } from "react-hook-form";
 
 // Types
 import { zodResolver } from "@hookform/resolvers/zod";
-import { schema } from "./schema";
+import { schema, schemaProps } from "./schema";
 
 export const useContact = () => {
   const {
+    handleSubmit,
     register,
     formState: { errors, isSubmitting },
-  } = useForm({
+  } = useForm<schemaProps>({
     mode: "onBlur",
     criteriaMode: "all",
     resolver: zodResolver(schema),
@@ -21,6 +22,7 @@ export const useContact = () => {
   });
 
   return {
+    handleSubmit,
     register,
     errors,
     isSubmitting,
