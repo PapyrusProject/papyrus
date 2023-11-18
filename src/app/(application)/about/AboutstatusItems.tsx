@@ -71,7 +71,7 @@ export default function AboutStatusItems() {
             {itens.map(
                 (i) => {
                     return (
-                        <div key={i.id} className="flex flex-col items-center justify-center w-64 gap-4 text-center">
+                        <div key={i.id} className="flex flex-col items-center justify-center w-64 gap-4 text-center mx-auto">
                             <div className="flex items-center justify-center w-20 h-20 rounded-full bg-primary">
                                 <div className="text-5xl text-white">
                                     {i.icon}
