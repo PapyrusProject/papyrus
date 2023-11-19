@@ -4,7 +4,7 @@ import SidebarNotes from "./_components/SidebarNotes";
 
 export default function EditorLayout({children}: {children : React.ReactNode}) {
     return(
-        <div className="w-full h-full flex">
+        <div className="min-h-screen flex">
             <SidebarConfig/>
             <SidebarNotes/>
             <div className="flex flex-col">
